@@ -68,7 +68,44 @@
                     <form id="contact-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
                         <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Lengkap / Kelompok Tani *</label><input type="text" id="form-name" required placeholder="Contoh: Pak Sugeng - Poktan Tani Jaya" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-medium"></div>
                         <div class="grid grid-cols-2 gap-3"><div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">No. WhatsApp *</label><input type="tel" id="form-phone" required placeholder="0813xxxx" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-medium"></div><div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kabupaten / Kota *</label><input type="text" id="form-city" required placeholder="Contoh: Maros" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-medium"></div></div>
-                        <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Pilih Varietas Benih</label><select id="form-variety" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-medium bg-white"><option value="Inpari 32 HDB Premium">Inpari 32 HDB Premium</option><option value="Mekongga Super Sertifikasi">Mekongga Super Sertifikasi</option><option value="Inpari 42 GSR Aromatik">Inpari 42 GSR Aromatik</option><option value="Konsultasi Dulu">Konsultasi Varietas Dulu</option></select></div>
+                        <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Pilih Varietas Benih</label><select id="form-variety" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-medium bg-white">
+    <optgroup label="🌾 Inbrida Populer">
+        <option value="Cigeulis">Cigeulis</option>
+        <option value="Ciherang">Ciherang</option>
+        <option value="Ciliwung">Ciliwung</option>
+        <option value="IR 64">IR 64</option>
+        <option value="Mekongga">Mekongga</option>
+        <option value="Memberamo">Memberamo</option>
+        <option value="Way Apo Buru">Way Apo Buru</option>
+        <option value="Inpari 50 Megagreen">Inpari 50 Megagreen</option>
+    </optgroup>
+    
+    <optgroup label="⚡ Genjah / Cepat Panen">
+        <option value="M70D (Moeldoko 70 Days)">M70D (Moeldoko 70 Days)</option>
+        <option value="Cakrabuana Agritan">Cakrabuana Agritan</option>
+        <option value="Padjajaran Agritan">Padjajaran Agritan</option>
+    </optgroup>
+    
+    <optgroup label="📈 Produktivitas Tinggi">
+        <option value="Inpari 32 Agritan">Inpari 32 Agritan</option>
+        <option value="Inpari 42 Agritan GSR">Inpari 42 Agritan GSR</option>
+        <option value="Inpari 43 Agritan GSR">Inpari 43 Agritan GSR</option>
+        <option value="Inpari 49 Jembar">Inpari 49 Jembar</option>
+    </optgroup>
+    
+    <optgroup label="🌸 Aromatik Premium">
+        <option value="Sintanur">Sintanur</option>
+        <option value="Inpari 23 Bantul">Inpari 23 Bantul</option>
+        <option value="Inpari 31">Inpari 31</option>
+        <option value="Inpari 48 Blas Aromatik">Inpari 48 Blas Aromatik</option>
+        <option value="Inpari 52 Baroma">Inpari 52 Baroma (Basmati Lokal)</option>
+        <option value="Inpari 53 Pandanwangi">Inpari 53 Pandanwangi</option>
+        <option value="Pandanwangi (Lokal Cianjur)">Pandanwangi (Lokal Cianjur)</option>
+        <option value="Rojolele">Rojolele</option>
+    </optgroup>
+    
+    <option value="Konsultasi Dulu" class="font-bold">💬 Konsultasi Varietas Dulu</option>
+</select></div>
                         <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Jumlah Pemesanan (Kantong/Kg)</label><input type="text" id="form-qty" placeholder="Contoh: 10 Kantong (50 Kg)" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-medium"></div>
                         <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-sm shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp text-xl"></i> Kirim Pesan via WhatsApp</button>
                     </form>
