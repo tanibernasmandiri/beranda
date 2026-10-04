@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proses & FAQ - Tani Bernas Mandiri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d', dark: '#052e16' }, amber: { 400: '#fbbf24', 500: '#f59e0b' } } } } }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; } body { overflow-x: hidden; }
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #16a34a, #f59e0b); z-index: 9999; width: 0%; transition: width 0.1s; }
+        #preloader { position: fixed; inset: 0; background: #052e16; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s, visibility 0.5s; }
+        #preloader.hidden { opacity: 0; visibility: hidden; }
+        .loader-ring { width: 60px; height: 60px; border: 4px solid rgba(255,255,255,0.1); border-top-color: #22c55e; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased">
+
+    <div id="preloader"><div class="text-center"><div class="loader-ring mx-auto mb-4"></div><p class="text-white font-bold text-sm">Memuat...</p></div></div>
+    <div id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b border-slate-200 w-full">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <a href="index.html" class="shrink-0 group flex items-center gap-3">
+                <img src="https://lh3.googleusercontent.com/d/1Z_FcVx2vaelG18eNInLD_Wa_4b3SqjPS" alt="Logo" class="h-12 sm:h-14 w-auto object-contain">
+            </a>
+            <div class="hidden xl:flex items-center gap-1 font-semibold text-slate-600 text-xs uppercase tracking-wider">
+                <a href="index.html" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-slate-100 transition-all">Beranda</a>
+                <a href="varietas.html" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-slate-100 transition-all">Katalog & Kalkulator</a>
+                <a href="proses.html" class="px-3.5 py-2 rounded-xl text-brand-700 bg-brand-50 font-bold transition-all">Proses & FAQ</a>
+                <a href="kontak.html" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-slate-100 transition-all">Kontak</a>
+            </div>
+            <div class="hidden sm:flex items-center gap-3 shrink-0">
+                <a href="kontak.html" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-md flex items-center gap-2"><i class="fa-brands fa-whatsapp text-base"></i> Pesan Sekarang</a>
+            </div>
+            <button id="mobile-menu-btn" class="xl:hidden p-2.5 rounded-xl text-slate-700 bg-slate-100"><i class="fa-solid fa-bars text-xl"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 shadow-2xl space-y-2">
+            <a href="index.html" class="mobile-link block px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-slate-100">Beranda</a>
+            <a href="varietas.html" class="mobile-link block px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-slate-100">Katalog & Kalkulator</a>
+            <a href="proses.html" class="mobile-link block px-4 py-2.5 rounded-xl text-brand-700 font-bold bg-brand-50">Proses & FAQ</a>
+            <a href="kontak.html" class="mobile-link block px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-slate-100">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Proses Section -->
+    <section class="py-20 bg-brand-dark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/20 px-3 py-1 rounded-full" data-aos="fade-right">Proses Penangkaran Ketat</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight" data-aos="fade-up">Dari Lahan Penangkaran Terbaik untuk Kemajuan Pertanian Indonesia</h2>
+                    <div class="space-y-5 pt-2">
+                        <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="200"><div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 font-extrabold text-sm">01</div><div><h4 class="font-bold text-white text-base">Benih Sumber Terverifikasi</h4><p class="text-xs sm:text-sm text-slate-300 mt-1">Menggunakan benih penjenis murni langsung dari Balai Besar Penelitian Padi (BB Padi) Sukamandi.</p></div></div>
+                        <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="300"><div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 font-extrabold text-sm">02</div><div><h4 class="font-bold text-white text-base">Pembersihan Mesin Modern</h4><p class="text-xs sm:text-sm text-slate-300 mt-1">Saringan udara mekanis memisahkan gabah hampa, kotoran, dan biji gulma hingga 99.8% murni.</p></div></div>
+                        <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="400"><div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 font-extrabold text-sm">03</div><div><h4 class="font-bold text-white text-base">Uji Laboratorium & Labelisasi BPSB</h4><p class="text-xs sm:text-sm text-slate-300 mt-1">Pengujian kadar air (<13%) dan daya kecambah (>95%) di bawah audit resmi.</p></div></div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-800 h-64 sm:h-80 lg:h-96">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Petani Panen" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10"><p class="text-xs text-amber-400 font-bold uppercase tracking-wider">Garansi Mutu Benih</p><p class="text-sm font-semibold text-white mt-1">"Apabila daya tumbuh benih di bawah 90%, kami siap mengganti benih baru secara gratis."</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 space-y-3"><span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 bg-brand-100 px-3 py-1 rounded-full" data-aos="fade-down">Pusat Bantuan</span><h2 class="text-3xl font-extrabold text-slate-900" data-aos="fade-up">Pertanyaan Yang Sering Diajukan</h2></div>
+            <div class="space-y-4" id="faq-accordion">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden transition-all" data-aos="fade-up" data-aos-delay="100"><button class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors faq-btn text-sm sm:text-base"><span>Apakah seluruh benih padi resmi bersertifikat BPSB?</span><i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i></button><div class="p-5 text-xs sm:text-sm text-slate-600 hidden bg-white border-t border-slate-100 leading-relaxed">Ya, 100% benih padi diproduksi di bawah sertifikasi & pengawasan Balai Pengawasan dan Sertifikasi Benih (BPSB).</div></div>
+                <div class="border border-slate-200 rounded-2xl overflow-hidden transition-all" data-aos="fade-up" data-aos-delay="200"><button class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors faq-btn text-sm sm:text-base"><span>Berapa kg kebutuhan benih padi untuk 1 Hektar sawah?</span><i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i></button><div class="p-5 text-xs sm:text-sm text-slate-600 hidden bg-white border-t border-slate-100 leading-relaxed">Rata-rata kebutuhan benih untuk 1 Hektar lahan sawah adalah 20 hingga 25 kg (4 - 5 kantong kemasan 5 kg).</div></div>
+                <div class="border border-slate-200 rounded-2xl overflow-hidden transition-all" data-aos="fade-up" data-aos-delay="300"><button class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors faq-btn text-sm sm:text-base"><span>Bagaimana sistem pengiriman partai besar?</span><i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i></button><div class="p-5 text-xs sm:text-sm text-slate-600 hidden bg-white border-t border-slate-100 leading-relaxed">Kami melayani pengiriman eceran maupun armada truk/fuso untuk Kelompok Tani (Poktan). Dapatkan potongan harga spesial grosir.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-900 text-center text-xs"><p>&copy; 2026 PT Tani Bernas Mandiri.</p></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        window.addEventListener('load', () => { setTimeout(() => { document.getElementById('preloader').classList.add('hidden'); }, 500); });
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY; const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('scroll-progress').style.width = ((scrollTop / docHeight) * 100) + '%';
+            if (!document.getElementById('mobile-menu').classList.contains('hidden')) document.getElementById('mobile-menu').classList.add('hidden');
+        });
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        document.querySelectorAll('.mobile-link').forEach(link => { link.addEventListener('click', () => { document.getElementById('mobile-menu').classList.add('hidden'); }); });
+
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => { btn.addEventListener('click', () => { const content = btn.nextElementSibling; const icon = btn.querySelector('i'); const isExpanded = !content.classList.contains('hidden'); document.querySelectorAll('#faq-accordion > div > div').forEach(c => c.classList.add('hidden')); document.querySelectorAll('#faq-accordion i').forEach(i => i.classList.remove('rotate-180')); if (!isExpanded) { content.classList.remove('hidden'); icon.classList.add('rotate-180'); } }); });
+    </script>
+</body>
+</html>

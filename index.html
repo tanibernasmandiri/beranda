@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Tani Bernas Mandiri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d', dark: '#052e16' },
+                        amber: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; } body { overflow-x: hidden; }
+        .gradient-hero { background: linear-gradient(135deg, rgba(5, 46, 22, 0.85) 0%, rgba(15, 23, 42, 0.75) 100%); }
+        .pulse-badge { animation: pulse-border 2s infinite; }
+        @keyframes pulse-border { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #16a34a, #f59e0b); z-index: 9999; width: 0%; transition: width 0.1s; }
+        #preloader { position: fixed; inset: 0; background: #052e16; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s, visibility 0.5s; }
+        #preloader.hidden { opacity: 0; visibility: hidden; }
+        .loader-ring { width: 60px; height: 60px; border: 4px solid rgba(255,255,255,0.1); border-top-color: #22c55e; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #back-to-top { opacity: 0; visibility: hidden; transition: all 0.3s; }
+        #back-to-top.show { opacity: 1; visibility: visible; }
+        img[loading="lazy"] { opacity: 0; transition: opacity 0.3s; }
+        img[loading="lazy"].loaded { opacity: 1; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-600 selection:text-white">
+
+    <div id="preloader"><div class="text-center"><div class="loader-ring mx-auto mb-4"></div><p class="text-white font-bold text-sm">Memuat Tani Bernas Mandiri...</p></div></div>
+    <div id="scroll-progress"></div>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark bg-gradient-to-r from-brand-900 via-brand-800 to-slate-900 text-white text-xs py-2.5 px-4" data-aos="fade-down">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-bold text-[10px] uppercase tracking-wider">Promo Musim Tanam</span><span>Diskon Khusus & Gratis Ongkir Pemesanan Kelompok Tani / Poktan!</span></div>
+            <div class="flex items-center gap-4 text-emerald-200"><a href="tel:+6281341113210" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-phone"></i> 0813-4111-3210</a><span class="hidden sm:inline">|</span><span class="hidden sm:inline"><i class="fa-solid fa-clock"></i> Sen - Sab: 07.00 - 17.00 WITA</span></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b border-slate-200 w-full transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <a href="index.html" class="shrink-0 group flex items-center gap-3">
+                <img src="https://lh3.googleusercontent.com/d/1Z_FcVx2vaelG18eNInLD_Wa_4b3SqjPS" alt="Logo Tani Bernas Mandiri" class="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform" loading="eager" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="hidden w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-amber-500 items-center justify-center text-white font-bold text-xl shadow-md"><i class="fa-solid fa-wheat-awn"></i></div>
+            </a>
+            <div class="hidden xl:flex items-center gap-1 font-semibold text-slate-600 text-xs uppercase tracking-wider">
+                <a href="index.html" class="px-3.5 py-2 rounded-xl text-brand-700 bg-brand-50 font-bold transition-all">Beranda</a>
+                <a href="varietas.html" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-slate-100 transition-all">Katalog & Kalkulator</a>
+                <a href="proses.html" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-slate-100 transition-all">Proses & FAQ</a>
+                <a href="kontak.html" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-slate-100 transition-all">Kontak</a>
+            </div>
+            <div class="hidden sm:flex items-center gap-3 shrink-0">
+                <a href="kontak.html" class="wa-cta-btn px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-extrabold text-xs uppercase tracking-wider shadow-md shadow-brand-600/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2"><i class="fa-brands fa-whatsapp text-base"></i> Pesan Sekarang</a>
+            </div>
+            <button id="mobile-menu-btn" class="xl:hidden p-2.5 rounded-xl text-slate-700 bg-slate-100 hover:bg-slate-200 focus:outline-none transition-colors" aria-label="Buka Menu Navigasi"><i class="fa-solid fa-bars text-xl"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 shadow-2xl space-y-2 transition-all">
+            <a href="index.html" class="mobile-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-900 font-bold bg-brand-50 text-brand-700"><i class="fa-solid fa-house text-brand-600 text-sm"></i> Beranda</a>
+            <a href="varietas.html" class="mobile-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-slate-100 transition-colors"><i class="fa-solid fa-wheat-awn text-slate-400 text-sm"></i> Katalog & Kalkulator</a>
+            <a href="proses.html" class="mobile-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-slate-100 transition-colors"><i class="fa-solid fa-microscope text-slate-400 text-sm"></i> Proses & FAQ</a>
+            <a href="kontak.html" class="mobile-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-slate-100 transition-colors"><i class="fa-solid fa-envelope text-slate-400 text-sm"></i> Kontak</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-brand-dark text-white overflow-hidden py-20 lg:py-28">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80" alt="Lahan Pertanian Padi Subur" class="w-full h-full object-cover opacity-40" loading="eager" onload="this.classList.add('loaded')">
+            <div class="absolute inset-0 gradient-hero"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-500/20 border border-brand-500/40 text-brand-100 text-xs sm:text-sm font-semibold backdrop-blur-md" data-aos="fade-down" data-aos-delay="100"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span><i class="fa-solid fa-award text-amber-400"></i> Sertifikasi Resmi BPSB Label Biru & Daya Tumbuh >95%</div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white" data-aos="fade-up" data-aos-delay="200">Panen Melimpah Hingga <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-emerald-400">10-12 Ton/Ha</span> dengan Benih Padi Unggul</h1>
+                    <p class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="300">Kunci sukses bertani dimulai dari benih murni berkualitas tinggi. Diproduksi melalui penangkaran terstandar, tahan hama wereng & penyakit, dengan tingkat perkecambahan presisi tinggi.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2" data-aos="fade-up" data-aos-delay="400">
+                        <a href="varietas.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-center shadow-lg shadow-amber-500/30 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"><i class="fa-solid fa-wheat-awn"></i> Lihat Katalog Benih</a>
+                        <a href="varietas.html#kalkulator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-center backdrop-blur-sm transition-all flex items-center justify-center gap-2"><i class="fa-solid fa-calculator text-amber-400"></i> Hitung Kebutuhan Lahan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white border-b border-slate-200 py-8 shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-slate-100">
+                <div class="space-y-1 p-2" data-aos="fade-up" data-aos-delay="100"><p class="text-3xl sm:text-4xl font-extrabold text-brand-700"><span class="counter" data-target="15000">0</span>+</p><p class="text-xs sm:text-sm font-semibold text-slate-600">Petani & Poktan Terbantu</p></div>
+                <div class="space-y-1 p-2" data-aos="fade-up" data-aos-delay="200"><p class="text-3xl sm:text-4xl font-extrabold text-amber-500"><span class="counter" data-target="95">0</span>% +</p><p class="text-xs sm:text-sm font-semibold text-slate-600">Daya Kecambah Rata-Rata</p></div>
+                <div class="space-y-1 p-2" data-aos="fade-up" data-aos-delay="300"><p class="text-3xl sm:text-4xl font-extrabold text-brand-700"><span class="counter" data-target="12">0</span>+</p><p class="text-xs sm:text-sm font-semibold text-slate-600">Varietas Sertifikasi BPSB</p></div>
+                <div class="space-y-1 p-2" data-aos="fade-up" data-aos-delay="400"><p class="text-3xl sm:text-4xl font-extrabold text-amber-500"><span class="counter" data-target="200">0</span>+</p><p class="text-xs sm:text-sm font-semibold text-slate-600">Kabupaten/Kota Terjangkau</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 bg-brand-100 px-3 py-1 rounded-full" data-aos="fade-down">Jaminan Kualitas Mutu</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-aos="fade-up">Mengapa Memilih Benih Padi Tani Bernas Mandiri?</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100"><div class="space-y-5"><div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl group-hover:bg-brand-600 group-hover:text-white transition-colors shadow-sm"><i class="fa-solid fa-shield-virus"></i></div><h3 class="text-xl font-bold text-slate-900">Ketahanan Hama & Wereng</h3><p class="text-slate-600 text-sm leading-relaxed">Resisten terhadap Hama Wereng Batang Cokelat (WBC) biotipe 1, 2, 3 dan penyakit Hawar Daun Bakteri (HDB).</p></div></div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200"><div class="space-y-5"><div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-white transition-colors shadow-sm"><i class="fa-solid fa-seedling"></i></div><h3 class="text-xl font-bold text-slate-900">Daya Kecambah >95%</h3><p class="text-slate-600 text-sm leading-relaxed">Benih segar dengan kemurnian genetik 99%. Pertumbuhan bibit serempak, akar cepat menjalar.</p></div></div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300"><div class="space-y-5"><div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl group-hover:bg-brand-600 group-hover:text-white transition-colors shadow-sm"><i class="fa-solid fa-certificate"></i></div><h3 class="text-xl font-bold text-slate-900">Sertifikasi BPSB Resmi</h3><p class="text-slate-600 text-sm leading-relaxed">Lengkap dengan label Biru/Ungu pengawasan Balai Pengawasan dan Sertifikasi Benih (BPSB).</p></div></div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400"><div class="space-y-5"><div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-white transition-colors shadow-sm"><i class="fa-solid fa-bowl-rice"></i></div><h3 class="text-xl font-bold text-slate-900">Beras Utuh & Nasi Pulen</h3><p class="text-slate-600 text-sm leading-relaxed">Bulir gabah bernas padat. Menghasilkan rendemen beras giling tinggi dan disukai pasar.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3"><span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 bg-brand-100 px-3 py-1 rounded-full" data-aos="fade-down">Bukti Hasil Panen</span><h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-aos="fade-up">Apa Kata Para Ketua Poktan & Petani?</h2></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100"><div class="space-y-4"><div class="flex text-amber-400 text-sm gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="text-slate-700 text-sm italic leading-relaxed">"Kelompok tani kami pakai Inpari 32. Batangnya sangat kekoh saat diterjang angin kencang. Hasil panen ubinan rata-rata tembus 9,8 Ton per hektar!"</p></div><div class="flex items-center gap-4 pt-6 mt-6 border-t border-slate-200"><div class="w-12 h-12 rounded-full bg-brand-200 flex items-center justify-center text-brand-700 font-bold">SU</div><div><h4 class="font-bold text-slate-900 text-sm">Pak Sugeng Utomo</h4><p class="text-xs text-slate-500">Ketua Poktan Tani Jaya, Karawang</p></div></div></div>
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200"><div class="space-y-4"><div class="flex text-amber-400 text-sm gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="text-slate-700 text-sm italic leading-relaxed">"Daya tumbuh kecambahnya luar biasa presisi. Semai 3 hari sudah serempak hijau. Nyulam bibit jadi sangat sedikit."</p></div><div class="flex items-center gap-4 pt-6 mt-6 border-t border-slate-200"><div class="w-12 h-12 rounded-full bg-brand-200 flex items-center justify-center text-brand-700 font-bold">WS</div><div><h4 class="font-bold text-slate-900 text-sm">I Wayan Subagia</h4><p class="text-xs text-slate-500">Petani Subak Tabanan, Bali</p></div></div></div>
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300"><div class="space-y-4"><div class="flex text-amber-400 text-sm gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="text-slate-600 text-sm italic leading-relaxed">"Pelayanan cepat, benih selalu baru dengan label biru resmi BPSB. Petani langganan saya selalu pesan ulang benih merek ini."</p></div><div class="flex items-center gap-4 pt-6 mt-6 border-t border-slate-200"><div class="w-12 h-12 rounded-full bg-brand-200 flex items-center justify-center text-brand-700 font-bold">HM</div><div><h4 class="font-bold text-slate-900 text-sm">Ibu Hj. Murniati</h4><p class="text-xs text-slate-500">Pemilik Toko Tani Makmur, Subang</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3"><img src="https://lh3.googleusercontent.com/d/1Z_FcVx2vaelG18eNInLD_Wa_4b3SqjPS" alt="Logo" class="h-10 w-auto object-contain" loading="lazy"><div class="hidden w-10 h-10 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-lg"><i class="fa-solid fa-wheat-awn"></i></div></div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">Produsen dan distributor resmi benih padi unggul bersertifikat BPSB.</p>
+                </div>
+                <div><h4 class="text-white font-bold text-sm mb-4">Navigasi</h4><ul class="space-y-2 text-xs sm:text-sm"><li><a href="index.html" class="hover:text-white transition-colors">Beranda</a></li><li><a href="varietas.html" class="hover:text-white transition-colors">Katalog Varietas</a></li><li><a href="proses.html" class="hover:text-white transition-colors">Proses & Sertifikasi</a></li><li><a href="kontak.html" class="hover:text-white transition-colors">Hubungi Kami</a></li></ul></div>
+                <div><h4 class="text-white font-bold text-sm mb-4">Kontak</h4><ul class="space-y-2 text-xs sm:text-sm"><li><i class="fa-brands fa-whatsapp mr-2"></i> 0813-4111-3210</li><li><i class="fa-solid fa-location-dot mr-2"></i> Maros, Sulawesi Selatan</li></ul></div>
+            </div>
+            <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-500"><p>&copy; 2026 PT Tani Bernas Mandiri. Seluruh Hak Cipta Dilindungi.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6281341113210" class="wa-cta-btn fixed bottom-6 right-6 z-50 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 pulse-badge" aria-label="Chat WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button id="back-to-top" class="fixed bottom-6 left-6 z-50 bg-brand-600 hover:bg-brand-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-2xl transition-all hover:scale-110" aria-label="Kembali ke Atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+        window.addEventListener('load', () => { setTimeout(() => { document.getElementById('preloader').classList.add('hidden'); }, 500); });
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('scroll-progress').style.width = ((scrollTop / docHeight) * 100) + '%';
+            const backToTop = document.getElementById('back-to-top');
+            if (scrollTop > 400) backToTop.classList.add('show'); else backToTop.classList.remove('show');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        document.querySelectorAll('.mobile-link').forEach(link => { link.addEventListener('click', () => { document.getElementById('mobile-menu').classList.add('hidden'); }); });
+
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000; const step = target / (duration / 16); let current = 0;
+                    const updateCounter = () => { current += step; if (current < target) { counter.innerText = Math.floor(current).toLocaleString('id-ID'); requestAnimationFrame(updateCounter); } else { counter.innerText = target.toLocaleString('id-ID'); } };
+                    updateCounter(); counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(counter => counterObserver.observe(counter));
+    </script>
+</body>
+</html>
