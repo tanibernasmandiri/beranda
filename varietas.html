@@ -34,8 +34,6 @@
         .seed-card:hover .seed-icon { transform: scale(1.1) rotate(5deg); }
         .seed-icon { transition: transform 0.4s ease; }
         .filter-btn.active { background: linear-gradient(135deg, #16a34a, #15803d); color: white; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3); }
-        .category-tag { transition: all 0.2s; }
-        .category-tag:hover { transform: scale(1.05); }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in-up { animation: fadeInUp 0.5s ease forwards; }
     </style>
@@ -81,7 +79,7 @@
                 <i class="fa-solid fa-seedling"></i> 23 Varietas Unggul Tersertifikasi
             </span>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4" data-aos="fade-up">
-                Varietas Unggulan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">berSertifikasi BPSB</span>
+                Varietas Unggulan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">berSertifikasi UPT. BSMBTPH</span>
             </h1>
             <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Temukan benih padi terbaik untuk lahan Anda. Dari varietas inbrida populer, genjah super cepat panen, hingga aromatik premium bernilai tinggi.
@@ -96,13 +94,10 @@
             <!-- Search & Filter Bar -->
             <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 mb-8 lg:sticky lg:top-20 z-40" data-aos="fade-up">
                 <div class="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center">
-                    <!-- Search -->
                     <div class="relative flex-1">
                         <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
                         <input type="text" id="search-input" placeholder="Cari varietas... (contoh: Inpari 32, Ciherang)" class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 text-sm font-medium">
                     </div>
-                    
-                    <!-- Sort -->
                     <select id="sort-select" class="px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 text-sm font-semibold bg-white cursor-pointer">
                         <option value="default">Urutkan: Default</option>
                         <option value="nama-asc">Nama (A-Z)</option>
@@ -111,7 +106,6 @@
                     </select>
                 </div>
                 
-                <!-- Filter Buttons -->
                 <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-100">
                     <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all">
                         <i class="fa-solid fa-border-all mr-1"></i> Semua (23)
@@ -130,7 +124,6 @@
                     </button>
                 </div>
                 
-                <!-- Result Counter -->
                 <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
                     <p class="text-xs text-slate-500 font-semibold"><span id="result-count">23</span> varietas ditampilkan</p>
                     <button id="reset-filter" class="text-xs text-brand-600 hover:text-brand-700 font-bold hidden">
@@ -139,10 +132,8 @@
                 </div>
             </div>
 
-            <!-- Katalog Container -->
             <div id="katalog-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             
-            <!-- Empty State -->
             <div id="empty-state" class="hidden text-center py-16">
                 <i class="fa-solid fa-magnifying-glass text-6xl text-slate-300 mb-4"></i>
                 <h3 class="text-xl font-bold text-slate-700 mb-2">Varietas Tidak Ditemukan</h3>
@@ -151,7 +142,7 @@
         </div>
     </section>
 
-    <!-- Kalkulator Section (Tetap Sama) -->
+    <!-- Kalkulator Section -->
     <section id="kalkulator" class="py-16 bg-gradient-to-br from-brand-900 via-brand-dark to-slate-900 text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-3xl mx-auto text-center mb-10 space-y-3">
@@ -181,7 +172,7 @@
 
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-900 text-center text-xs">
-        <p>&copy; 2026 PT Tani Bernas Mandiri. Seluruh Hak Cipta Dilindungi.</p>
+        <p>&copy; 2026 PT Tani Bernas Mandiri. Sertifikasi Resmi UPT. BSMBTPH Sulawesi Selatan.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -196,7 +187,6 @@
         document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
         document.querySelectorAll('.mobile-link').forEach(link => { link.addEventListener('click', () => { document.getElementById('mobile-menu').classList.add('hidden'); }); });
 
-        // Data 23 Varietas
         const daftarVarietas = [
             { id: 1, nama: "Cigeulis", kategori: ["inbrida"], icon: "fa-wheat-awn", gradient: "from-emerald-500 to-teal-600", badge: "Klasik", badgeColor: "bg-emerald-500", umur: "115-125", hasil: "8,0", hasilRata: "5,0-6,0", tekstur: "Pulen", ketahanan: "Tahan WBC biotipe 2 & 3, HDB patotipe IV", deskripsi: "Varietas padi sawah irigasi dengan ketahanan baik terhadap wereng dan hawar daun." },
             { id: 2, nama: "Ciherang", kategori: ["inbrida", "produktif"], icon: "fa-seedling", gradient: "from-green-500 to-emerald-600", badge: "Populer", badgeColor: "bg-green-600", umur: "116-125", hasil: "8,5", hasilRata: "5,0-7,0", tekstur: "Pulen", ketahanan: "Tahan WBC biotipe 2 & 3, HDB patotipe III", deskripsi: "Salah satu varietas paling populer di Indonesia, adaptif di berbagai kondisi lahan." },
@@ -205,7 +195,7 @@
             { id: 5, nama: "Inpari 42 Agritan GSR", kategori: ["produktif"], icon: "fa-leaf", gradient: "from-lime-500 to-green-600", badge: "GSR Efisien", badgeColor: "bg-lime-600", umur: "112-115", hasil: "10,58", hasilRata: "7,11", tekstur: "Pulen", ketahanan: "Efisien hara/air, tahan Blas ras 073 & 133, HDB III & IV", deskripsi: "Green Super Rice yang efisien dalam penyerapan hara dan air." },
             { id: 6, nama: "Inpari 43 Agritan GSR", kategori: ["produktif"], icon: "fa-sun", gradient: "from-yellow-500 to-orange-500", badge: "Tahan Kering", badgeColor: "bg-yellow-600", umur: "111", hasil: "9,02", hasilRata: "6,96", tekstur: "Pulen", ketahanan: "Tahan HDB patotipe III, Blas ras 073 & 0133, toleran kering", deskripsi: "GSR dengan ketahanan khusus terhadap kekeringan." },
             { id: 7, nama: "Inpari 49 Jembar", kategori: ["produktif"], icon: "fa-shield-halved", gradient: "from-indigo-500 to-purple-600", badge: "Tahan Wereng", badgeColor: "bg-indigo-600", umur: "112", hasil: "9,5", hasilRata: "7,45", tekstur: "Pulen", ketahanan: "Tahan WBC biotipe 1, 2, & 3, HDB patotipe III", deskripsi: "Ketahanan unggul terhadap semua biotipe wereng batang cokelat." },
-            { id: 8, nama: "Inpari 50 Megagreen", kategori: ["produktif"], icon: "fa-bolt", gradient: "from-teal-500 to-cyan-600", badge: "Efisien Pupuk", badgeColor: "bg-teal-600", umur: "110-115", hasil: "9,2", hasilRata: "6,9", tekstur: "Pulen", ketahanan: "Tahan Blas, agak tahan WBC biotipe 1 & 2", deskripsi: "Respon baik pada pemupukan yang efisien, hemat biaya produksi." },
+            { id: 8, nama: "Inpari 50 Megagreen", kategori: ["inbrida"], icon: "fa-bolt", gradient: "from-teal-500 to-cyan-600", badge: "Efisien Pupuk", badgeColor: "bg-teal-600", umur: "110-115", hasil: "9,2", hasilRata: "6,9", tekstur: "Pulen", ketahanan: "Tahan Blas, agak tahan WBC biotipe 1 & 2", deskripsi: "Respon baik pada pemupukan yang efisien, hemat biaya produksi." },
             { id: 9, nama: "IR 64", kategori: ["inbrida"], icon: "fa-star", gradient: "from-amber-500 to-orange-600", badge: "Legendaris", badgeColor: "bg-amber-600", umur: "115-120", hasil: "7,0", hasilRata: "5,0-7,0", tekstur: "Pulen", ketahanan: "Tahan WBC biotipe 1 & 2", deskripsi: "Varietas legenda yang menjadi tetua banyak varietas baru, standar cita rasa nasi Indonesia." },
             { id: 10, nama: "Mekongga", kategori: ["inbrida", "produktif"], icon: "fa-mountain", gradient: "from-emerald-600 to-green-700", badge: "Batang Kokoh", badgeColor: "bg-emerald-700", umur: "116-125", hasil: "8,4", hasilRata: "6,0", tekstur: "Pulen", ketahanan: "Batang kokoh tahan rebah, WBC biotipe 2 & 3, HDB strain IV", deskripsi: "Batang kokoh dan tahan rebah, cocok untuk daerah berangin." },
             { id: 11, nama: "Memberamo", kategori: ["inbrida"], icon: "fa-river", gradient: "from-sky-500 to-blue-600", badge: "Tahan Kerdil", badgeColor: "bg-sky-600", umur: "115-120", hasil: "7,5", hasilRata: "5,5", tekstur: "Pulen", ketahanan: "Agak tahan WBC biotipe 1, 2, & 3, tahan kerdil rumput", deskripsi: "Ketahanan khusus terhadap penyakit kerdil rumput." },
@@ -217,7 +207,7 @@
             { id: 17, nama: "Inpari 23 Bantul", kategori: ["aromatik", "produktif"], icon: "fa-spa", gradient: "from-pink-500 to-rose-600", badge: "Wangi Produktif", badgeColor: "bg-pink-600", umur: "116", hasil: "9,2", hasilRata: "6,9", tekstur: "Pulen & Wangi", ketahanan: "Agak tahan WBC biotipe 1 & 2, HDB strain III", deskripsi: "Varietas aromatik dengan produktivitas tinggi." },
             { id: 18, nama: "Inpari 31", kategori: ["aromatik"], icon: "fa-feather", gradient: "from-fuchsia-500 to-purple-600", badge: "Tahan Blas", badgeColor: "bg-fuchsia-600", umur: "119", hasil: "8,5", hasilRata: "6,0", tekstur: "Pulen & Wangi", ketahanan: "Sangat tahan Blas ras 033, 073, 133, WBC biotipe 1, 2, 3", deskripsi: "Ketahanan sangat baik terhadap penyakit Blas dan wereng." },
             { id: 19, nama: "Inpari 48 Blas Aromatik", kategori: ["aromatik", "produktif"], icon: "fa-shield-virus", gradient: "from-violet-600 to-indigo-700", badge: "Super Tahan Blas", badgeColor: "bg-violet-700", umur: "121", hasil: "9,13", hasilRata: "7,31", tekstur: "Pulen & Wangi", ketahanan: "Sangat tahan berbagai ras Blas, HDB patotipe III", deskripsi: "Ketahanan terbaik terhadap penyakit Blas dengan aroma wangi." },
-            { id: 20, nama: "Inpari 52 Baroma", kategori: ["aromatik", "produktif"], icon: "fa-wheat-awn", gradient: "from-amber-600 to-yellow-700", badge: "Basmati Lokal", badgeColor: "bg-amber-700", umur: "113", hasil: "9,1", hasilRata: "6,1", tekstur: "Pera/Panjang", ketahanan: "Tahan HDB strain III, Blas ras 073", deskripsi: "Basmati versi lokal Indonesia, cocok untuk nasi kebuli/biryani." },
+            { id: 20, nama: "Inpari 52 Baroma", kategori: ["aromatik"], icon: "fa-wheat-awn", gradient: "from-amber-600 to-yellow-700", badge: "Basmati Lokal", badgeColor: "bg-amber-700", umur: "113", hasil: "9,1", hasilRata: "6,1", tekstur: "Pera/Panjang", ketahanan: "Tahan HDB strain III, Blas ras 073", deskripsi: "Basmati versi lokal Indonesia, cocok untuk nasi kebuli/biryani." },
             { id: 21, nama: "Inpari 53 Pandanwangi", kategori: ["aromatik"], icon: "fa-leaf", gradient: "from-green-600 to-emerald-700", badge: "Pandan Premium", badgeColor: "bg-green-700", umur: "115-120", hasil: "8,5", hasilRata: "6,5", tekstur: "Sangat Pulen & Wangi", ketahanan: "Lebih tahan rebah & hama vs Pandanwangi lokal", deskripsi: "Perbaikan Pandanwangi lokal dengan postur lebih pendek dan kokoh." },
             { id: 22, nama: "Pandanwangi (Lokal Cianjur)", kategori: ["aromatik"], icon: "fa-crown", gradient: "from-yellow-600 to-amber-700", badge: "Premium Lokal", badgeColor: "bg-yellow-700", umur: "145-155", hasil: "5,0", hasilRata: "4,0-5,0", tekstur: "Sangat Pulen & Wangi", ketahanan: "Nilai ekonomi sangat tinggi, rentan rebah", deskripsi: "Varietas lokal spesifik lokasi dengan aroma pandan sangat kuat dan harga jual tinggi." },
             { id: 23, nama: "Rojolele", kategori: ["aromatik"], icon: "fa-gem", gradient: "from-rose-600 to-pink-700", badge: "Premium Klaten", badgeColor: "bg-rose-700", umur: "140-155", hasil: "9,0", hasilRata: "-", tekstur: "Sangat Pulen & Gurih", ketahanan: "Nilai ekonomis tinggi, versi Srinuk lebih tahan rebah", deskripsi: "Beras premium dari Klaten dengan rasa gurih/manis dan aroma wangi khas." }
@@ -233,13 +223,7 @@
             container.innerHTML = '';
 
             let filteredData = daftarVarietas;
-
-            // Filter by category
-            if (currentFilter !== 'all') {
-                filteredData = filteredData.filter(item => item.kategori.includes(currentFilter));
-            }
-
-            // Filter by search
+            if (currentFilter !== 'all') filteredData = filteredData.filter(item => item.kategori.includes(currentFilter));
             if (currentSearch) {
                 const searchLower = currentSearch.toLowerCase();
                 filteredData = filteredData.filter(item => 
@@ -248,30 +232,14 @@
                     item.ketahanan.toLowerCase().includes(searchLower)
                 );
             }
+            if (currentSort === 'nama-asc') filteredData.sort((a, b) => a.nama.localeCompare(b.nama));
+            else if (currentSort === 'umur-asc') filteredData.sort((a, b) => parseInt(a.umur.split('-')[0]) - parseInt(b.umur.split('-')[0]));
+            else if (currentSort === 'hasil-desc') filteredData.sort((a, b) => parseFloat(b.hasil) - parseFloat(a.hasil));
 
-            // Sort
-            if (currentSort === 'nama-asc') {
-                filteredData.sort((a, b) => a.nama.localeCompare(b.nama));
-            } else if (currentSort === 'umur-asc') {
-                filteredData.sort((a, b) => {
-                    const umurA = parseInt(a.umur.split('-')[0]);
-                    const umurB = parseInt(b.umur.split('-')[0]);
-                    return umurA - umurB;
-                });
-            } else if (currentSort === 'hasil-desc') {
-                filteredData.sort((a, b) => parseFloat(b.hasil) - parseFloat(a.hasil));
-            }
-
-            // Update counter
             document.getElementById('result-count').textContent = filteredData.length;
             document.getElementById('reset-filter').classList.toggle('hidden', currentFilter === 'all' && !currentSearch && currentSort === 'default');
 
-            if (filteredData.length === 0) {
-                emptyState.classList.remove('hidden');
-                return;
-            } else {
-                emptyState.classList.add('hidden');
-            }
+            if (filteredData.length === 0) { emptyState.classList.remove('hidden'); return; } else { emptyState.classList.add('hidden'); }
 
             filteredData.forEach((item, index) => {
                 const namaDepan = item.nama.split(' ')[0];
@@ -279,77 +247,48 @@
                 
                 container.innerHTML += `
                     <div class="seed-card bg-white rounded-2xl shadow-md hover:shadow-2xl border border-slate-200 overflow-hidden fade-in-up" style="animation-delay: ${index * 50}ms">
-                        <!-- Header dengan Gradient & Ikon -->
                         <div class="relative bg-gradient-to-br ${item.gradient} p-6 text-white">
-                            <div class="absolute top-3 right-3 ${item.badgeColor} text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg uppercase tracking-wider">
-                                ${item.badge}
-                            </div>
+                            <div class="absolute top-3 right-3 ${item.badgeColor} text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg uppercase tracking-wider">${item.badge}</div>
                             <div class="flex items-center gap-4">
-                                <div class="seed-icon w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl border-2 border-white/30">
-                                    <i class="fa-solid ${item.icon}"></i>
-                                </div>
+                                <div class="seed-icon w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl border-2 border-white/30"><i class="fa-solid ${item.icon}"></i></div>
                                 <div>
                                     <h3 class="text-xl font-extrabold leading-tight">${item.nama}</h3>
                                     <p class="text-xs text-white/80 mt-1 capitalize">${item.kategori.join(', ')}</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Body dengan Info Grid -->
                         <div class="p-6 space-y-4">
                             <p class="text-slate-600 text-sm leading-relaxed">${item.deskripsi}</p>
-                            
-                            <!-- Specs Grid 2x2 -->
                             <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100">
                                 <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <i class="fa-solid fa-clock text-brand-600 text-xs"></i>
-                                        <span class="text-[10px] text-slate-500 font-bold uppercase">Umur</span>
-                                    </div>
+                                    <div class="flex items-center gap-2 mb-1"><i class="fa-solid fa-clock text-brand-600 text-xs"></i><span class="text-[10px] text-slate-500 font-bold uppercase">Umur</span></div>
                                     <p class="text-sm font-extrabold text-slate-900">${item.umur} <span class="text-xs font-normal text-slate-500">HST</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <i class="fa-solid fa-chart-line text-amber-600 text-xs"></i>
-                                        <span class="text-[10px] text-slate-500 font-bold uppercase">Potensi</span>
-                                    </div>
+                                    <div class="flex items-center gap-2 mb-1"><i class="fa-solid fa-chart-line text-amber-600 text-xs"></i><span class="text-[10px] text-slate-500 font-bold uppercase">Potensi</span></div>
                                     <p class="text-sm font-extrabold text-slate-900">${item.hasil} <span class="text-xs font-normal text-slate-500">ton/ha</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <i class="fa-solid fa-bowl-rice text-emerald-600 text-xs"></i>
-                                        <span class="text-[10px] text-slate-500 font-bold uppercase">Tekstur</span>
-                                    </div>
+                                    <div class="flex items-center gap-2 mb-1"><i class="fa-solid fa-bowl-rice text-emerald-600 text-xs"></i><span class="text-[10px] text-slate-500 font-bold uppercase">Tekstur</span></div>
                                     <p class="text-xs font-bold text-slate-900">${item.tekstur}</p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <i class="fa-solid fa-shield-halved text-brand-700 text-xs"></i>
-                                        <span class="text-[10px] text-slate-500 font-bold uppercase">Ketahanan</span>
-                                    </div>
+                                    <div class="flex items-center gap-2 mb-1"><i class="fa-solid fa-shield-halved text-brand-700 text-xs"></i><span class="text-[10px] text-slate-500 font-bold uppercase">Ketahanan</span></div>
                                     <p class="text-[11px] font-semibold text-slate-700 leading-tight">${item.ketahanan}</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Footer dengan Tombol Pesan -->
                         <div class="p-6 pt-0">
-                            <a href="https://wa.me/6281341113210?text=${waMessage}" class="w-full py-3 rounded-xl bg-brand-50 text-brand-800 font-bold text-sm text-center block hover:bg-brand-600 hover:text-white transition-all border border-brand-200 hover:border-brand-600">
-                                <i class="fa-brands fa-whatsapp text-lg mr-1"></i> Pesan ${namaDepan}
-                            </a>
+                            <a href="https://wa.me/6281341113210?text=${waMessage}" class="w-full py-3 rounded-xl bg-brand-50 text-brand-800 font-bold text-sm text-center block hover:bg-brand-600 hover:text-white transition-all border border-brand-200 hover:border-brand-600"><i class="fa-brands fa-whatsapp text-lg mr-1"></i> Pesan ${namaDepan}</a>
                         </div>
                     </div>
                 `;
             });
         }
 
-        // Filter buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    b.classList.remove('active');
-                    b.classList.add('bg-slate-100', 'text-slate-600');
-                });
+                document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.classList.add('bg-slate-100', 'text-slate-600'); });
                 btn.classList.add('active');
                 btn.classList.remove('bg-slate-100', 'text-slate-600');
                 currentFilter = btn.getAttribute('data-filter');
@@ -357,38 +296,21 @@
             });
         });
 
-        // Search input
-        document.getElementById('search-input').addEventListener('input', (e) => {
-            currentSearch = e.target.value;
-            renderKatalog();
-        });
-
-        // Sort select
-        document.getElementById('sort-select').addEventListener('change', (e) => {
-            currentSort = e.target.value;
-            renderKatalog();
-        });
-
-        // Reset filter
+        document.getElementById('search-input').addEventListener('input', (e) => { currentSearch = e.target.value; renderKatalog(); });
+        document.getElementById('sort-select').addEventListener('change', (e) => { currentSort = e.target.value; renderKatalog(); });
         document.getElementById('reset-filter').addEventListener('click', () => {
-            currentFilter = 'all';
-            currentSearch = '';
-            currentSort = 'default';
+            currentFilter = 'all'; currentSearch = ''; currentSort = 'default';
             document.getElementById('search-input').value = '';
             document.getElementById('sort-select').value = 'default';
-            document.querySelectorAll('.filter-btn').forEach(b => {
-                b.classList.remove('active');
-                b.classList.add('bg-slate-100', 'text-slate-600');
-            });
+            document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.classList.add('bg-slate-100', 'text-slate-600'); });
             document.querySelector('[data-filter="all"]').classList.add('active');
             document.querySelector('[data-filter="all"]').classList.remove('bg-slate-100', 'text-slate-600');
             renderKatalog();
         });
 
-        // Initial render
         renderKatalog();
 
-        // Kalkulator (kode sama seperti sebelumnya)
+        // Kalkulator
         let currentUnit = 'ha';
         const unitBtns = document.querySelectorAll('.unit-btn');
         const landInput = document.getElementById('land-size');
